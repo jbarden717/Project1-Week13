@@ -120,10 +120,9 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 - Edit the hosts file: nano hosts
 - Add the webserver IPs followed by ansible_python_interpreter=/usr/bin/python3 to the hosts file under [Webservers] Group
 - Add the ELK Server IP followed by ansible_python_interpreter=/usr/bin/python3 under [ELKServers] group
-- Save the config file: ctrl-x,  Y to save, Enter to save as the hosts filename
-- Make sure you are in the directory that install-elk.yml is in.
-- run the command: cp ElkPlaybook.yml /etc/ansible
-- run the command: sudo nano ElkPlaybook.yml /etc/ansible
-- name: installing elk hosts: [your_machine]
-- To exit and save use command: Ctrl + x and save the file.
-- run the command: ansible-playbook ElkPlaybook.yml
+- Save the hosts file: ctrl-x,  Y to save, Enter to save as the hosts filename
+- Make sure you are in the directory that install-elk.yml is in: cd /etc/ansible
+- Edit install-elk.yml: nano install-elk.yml
+- Make sure the install-elk.yml file matches the one attached to this repository
+- Save the yml file: ctrl-x,  Y to save, Enter to save as the install-elk.yml filename
+- Install ELK using playbook: ansible-playbook install-elk.yml

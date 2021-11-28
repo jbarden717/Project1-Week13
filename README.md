@@ -35,11 +35,10 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
 - Metricbeat takes the metrics and statistics that it collects and ships them to the output that you specify, such as Elasticsearch or Logstash. Metricbeat helps you monitor your servers by collecting metrics from the system and services running on the server, such as: Apache.
 
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Function | IP Address | Operating System |
 |----------|----------|------------|------------------|
-| Jump Box | Gateway  | 10.0.0.4   | Linux            |
+| RedJumpboxProvisioner | Gateway  | 10.0.0.4   | Linux            |
 | Web-1    | webserver| 10.0.0.5   | Linux            |
 | Web-2    | webserver| 10.0.0.6   | Linux            |
 | Web-3    | webserver| 10.0.0.8   | Linux            |
@@ -50,29 +49,36 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the RedJumpboxProvisioner machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
+- 173.67.135.3
 
-Machines within the network can only be accessed by _____.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
+Machines within the network can only be accessed by the Ansible Container running on the RedJumpboxProvisioner.
+- RedJumpboxProvisioner
+- 10.0.0.4
 
 A summary of the access policies in place can be found in the table below.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| RedJumpboxProvisioner | Yes                 | 173.67.135.3    |
+| Web-1     | No                 |  10.0.0.4                    |
+| Web-2     | No                 |  10.0.0.4             |
+| Web-3     | No                 |  10.0.0.4             |
+| Elk-1     | No                 |  10.0.0.4             |
+| GoForRed-LB | Yes                 | 173.67.135.3    |
 
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+- A single or Thousands of VM's can be deployed quickly
+- Manual configurations allow for potential errors during deployment. Automated deployments are tested for errors before being deployed.
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Sets the remote user used to deploy the ELK Stack
+- Installs docker.io
+- Installs pip3
+- Downloads, lauches, and configures a docker elk container
+- Starts the docker service 
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 

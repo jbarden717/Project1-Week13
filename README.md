@@ -126,3 +126,22 @@ _As a **Bonus**, provide the specific commands the user will need to run to down
 - Make sure the install-elk.yml file matches the one attached to this repository
 - Save the yml file: ctrl-x,  Y to save, Enter to save as the install-elk.yml filename
 - Install ELK using playbook: ansible-playbook install-elk.yml
+- Edit the filebeat-config.yml and metricbeat-config.yml files to point to your ELK Stack 
+- nano filebeat-config.yml
+- nano metricbeat-config.yml
+- Save the two files: ctrl-x,  Y to save, Enter to save as the appropriate filename
+- Create the two playbooks 
+- nano filebeat-playbook.yml
+- nano metricbeat-playbook.yml
+- Make sure they are configured like the two attached files in the repository
+- Save the two files: ctrl-x,  Y to save, Enter to save as the appropriate filename
+- Run the playbooks
+- ansible-playbook filebeat-playbook.yml
+- ansible-playbook metricbeat-playbook.yml
+- Confirm that they are both sending data to ELK. 
+- Connect to Kibana : http://13.87.206.63:5601/app/kibana
+- Click Add Log Data
+- Click System Logs
+- Scroll to bottom and click Check data.  Make sure "Data successfully received from this module" is shown
+- Back up to Add Data to kibana. Click on the Metrics Tab.  Click Docker Metrics. Scroll to bottom and click Check data.
+- Make sure "Data successfully received from this module" is shown

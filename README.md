@@ -5,7 +5,7 @@ Automated ELK Stack Deployment
 
 The files in this repository were used to configure the network depicted below.
 
-![TODO: Update the path with the name of your diagram](Images/diagram_filename.png)
+![TODO: Update the path with the name of your diagram](Diagrams/Project-Diagram.jpg)
 
 diagrams/Project-Diagram.jpg
 

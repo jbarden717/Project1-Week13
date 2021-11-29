@@ -14,6 +14,7 @@ These files have been tested and used to generate a live ELK deployment on Azure
   - install-elk.yml
   - filebeat-playbook.yml
   - metricbeat-playbook.yml
+  - Additional ansible files can be found here: https://github.com/jbarden717/Project1-Week13/tree/main/Ansible
 
 This document contains the following details:
 - Description of the Topology

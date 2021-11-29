@@ -9,6 +9,7 @@ The following files are used to deploy the ELK Container and monitor the web ser
 - filebeat-playbook.xml : Ansible playbook used to install and configure filebeat on web servers
 - metricbeat-config.xml : Configuration file for Metricbeat when installing 
 - metricbeat-playbook.xml : Ansible playbook used to install and configure metricbeat on web servers
+- hosts : This file is where I place all the ip addresses of my servers and group them accordingly
 
 
 
